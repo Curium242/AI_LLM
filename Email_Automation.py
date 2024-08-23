@@ -21,7 +21,7 @@ import datetime
 import csv
 
 API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer #api"}
 
 SCOPES_GMAIL = 'https://www.googleapis.com/auth/gmail.modify' # we are using modify and not readonly, as we will be marking the messages Read
 store = file.Storage('storage.json')
@@ -123,7 +123,7 @@ def authenticate():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                "C:/Users/Niranjan/Downloads/credentials.json", SCOPES_TASKS)
+                "C:/Users/Astatine/Downloads/credentials.json", SCOPES_TASKS)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.json', 'w') as token:
